@@ -1,0 +1,12 @@
+﻿  96/96  (45 s)
+
+Resultados de soccer_team_DVF_DL (promedio por partido; izq = azul, der = violeta)
+rival                        n |    como izq |    como der |   neto/2 part. |    G-E-P | saque fav-contra
+soccer_team_NormalTeam   16+16 |  2.8 -  1.1 |  2.8 -  0.5 |  +4.0 ±  1.1 |   29-0-3 |        1.6 - 0.1
+soccer_team_DVF          16+16 |  1.6 -  1.2 |  1.6 -  0.6 |  +1.4 ±  1.0 |   24-0-8 |        1.2 - 0.5
+soccer_team_DVF_v2       16+16 |  0.6 -  2.4 |  0.4 -  1.8 |  -3.1 ±  1.2 |   4-0-28 |        0.1 - 1.6
+
+neto/2 part. = (dif. de gol como izq) + (dif. de gol como der); ± = intervalo ~95 %.
+Reinicios por pelota trabada: 1.9 por partido.
+Partidos definidos por gol de oro (o empatados al tope): 25 de 96.
+Pelota quieta en esquinas: 19.8% del tiempo (de nuestro lado 8.4%, del lado rival 11.4%).

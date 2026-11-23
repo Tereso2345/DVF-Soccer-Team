@@ -1,0 +1,612 @@
+{
+  "phases": [
+    {
+      "cycle": 1,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-22T21:31:05",
+      "hours": 0.591,
+      "hash_striker": "1818066e44",
+      "hash_keeper": "444ed91f4a",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.988,
+        "gf_per_upd": 1.996,
+        "gc_per_upd": 1.167
+      }
+    },
+    {
+      "cycle": 1,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-22T22:06:34",
+      "hours": 0.563,
+      "hash_striker": "1818066e44",
+      "hash_keeper": "907fb11e02",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.6344,
+        "gf_per_upd": 1.743,
+        "gc_per_upd": 0.91
+      }
+    },
+    {
+      "cycle": 2,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-22T22:40:20",
+      "hours": 0.564,
+      "hash_striker": "a80dd40519",
+      "hash_keeper": "907fb11e02",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.9575,
+        "gf_per_upd": 1.653,
+        "gc_per_upd": 0.69
+      }
+    },
+    {
+      "cycle": 2,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-22T23:14:12",
+      "hours": 0.563,
+      "hash_striker": "a80dd40519",
+      "hash_keeper": "686af1a0d3",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.7065,
+        "gf_per_upd": 2.037,
+        "gc_per_upd": 0.91
+      }
+    },
+    {
+      "cycle": 3,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-22T23:47:57",
+      "hours": 0.566,
+      "hash_striker": "93529c74ba",
+      "hash_keeper": "686af1a0d3",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.9002,
+        "gf_per_upd": 1.878,
+        "gc_per_upd": 1.012
+      }
+    },
+    {
+      "cycle": 3,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-23T00:21:55",
+      "hours": 0.563,
+      "hash_striker": "93529c74ba",
+      "hash_keeper": "dae22a0723",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8065,
+        "gf_per_upd": 1.608,
+        "gc_per_upd": 0.98
+      }
+    },
+    {
+      "cycle": 4,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-23T00:55:41",
+      "hours": 0.564,
+      "hash_striker": "da9305780e",
+      "hash_keeper": "dae22a0723",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8858,
+        "gf_per_upd": 1.833,
+        "gc_per_upd": 0.898
+      }
+    },
+    {
+      "cycle": 4,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-23T01:29:30",
+      "hours": 0.565,
+      "hash_striker": "da9305780e",
+      "hash_keeper": "58c80f3b5a",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8075,
+        "gf_per_upd": 1.8,
+        "gc_per_upd": 0.882
+      }
+    },
+    {
+      "cycle": 5,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-23T02:03:24",
+      "hours": 0.566,
+      "hash_striker": "fb80f1edaa",
+      "hash_keeper": "58c80f3b5a",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8908,
+        "gf_per_upd": 1.955,
+        "gc_per_upd": 1.127
+      }
+    },
+    {
+      "cycle": 5,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-23T02:37:22",
+      "hours": 0.57,
+      "hash_striker": "fb80f1edaa",
+      "hash_keeper": "738a1bc5dd",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.9467,
+        "gf_per_upd": 2.033,
+        "gc_per_upd": 1.049
+      }
+    },
+    {
+      "cycle": 6,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-23T03:11:33",
+      "hours": 0.562,
+      "hash_striker": "0a4cc0cace",
+      "hash_keeper": "738a1bc5dd",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8739,
+        "gf_per_upd": 1.576,
+        "gc_per_upd": 0.935
+      }
+    },
+    {
+      "cycle": 6,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-23T03:45:16",
+      "hours": 0.564,
+      "hash_striker": "0a4cc0cace",
+      "hash_keeper": "b2184cd663",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8603,
+        "gf_per_upd": 1.804,
+        "gc_per_upd": 0.816
+      }
+    },
+    {
+      "cycle": 7,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-23T04:19:05",
+      "hours": 0.564,
+      "hash_striker": "bdc40e7cf6",
+      "hash_keeper": "b2184cd663",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8176,
+        "gf_per_upd": 1.771,
+        "gc_per_upd": 0.939
+      }
+    },
+    {
+      "cycle": 7,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-23T04:52:57",
+      "hours": 0.564,
+      "hash_striker": "bdc40e7cf6",
+      "hash_keeper": "8eb9ba3cab",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8967,
+        "gf_per_upd": 1.971,
+        "gc_per_upd": 1.024
+      }
+    },
+    {
+      "cycle": 8,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-23T05:26:48",
+      "hours": 0.565,
+      "hash_striker": "f040c32285",
+      "hash_keeper": "8eb9ba3cab",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8372,
+        "gf_per_upd": 1.976,
+        "gc_per_upd": 1.106
+      }
+    },
+    {
+      "cycle": 8,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-23T06:00:41",
+      "hours": 0.565,
+      "hash_striker": "f040c32285",
+      "hash_keeper": "579ef09389",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.9166,
+        "gf_per_upd": 1.939,
+        "gc_per_upd": 0.8
+      }
+    },
+    {
+      "cycle": 9,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-23T06:34:34",
+      "hours": 0.563,
+      "hash_striker": "1baca47dfc",
+      "hash_keeper": "579ef09389",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8279,
+        "gf_per_upd": 1.788,
+        "gc_per_upd": 0.829
+      }
+    },
+    {
+      "cycle": 9,
+      "role": "keeper",
+      "steps": 1500000,
+      "start": "2026-11-23T07:08:20",
+      "hours": 0.56,
+      "hash_striker": "1baca47dfc",
+      "hash_keeper": "eb26e75ade",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.01,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8367,
+        "gf_per_upd": 1.522,
+        "gc_per_upd": 0.624
+      }
+    },
+    {
+      "cycle": 10,
+      "role": "striker",
+      "steps": 1500000,
+      "start": "2026-11-23T07:41:57",
+      "hours": 0.564,
+      "hash_striker": "7101f354f4",
+      "hash_keeper": "eb26e75ade",
+      "opponents": [
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam",
+        "DVF_v2",
+        "DVF",
+        "DVF_v2",
+        "NormalTeam"
+      ],
+      "entropy_coef": 0.012,
+      "reward": "v4",
+      "stats": {
+        "its": 245,
+        "ent_mean": 1.8807,
+        "gf_per_upd": 1.678,
+        "gc_per_upd": 0.706
+      }
+    }
+  ],
+  "config": {
+    "run": "corrida7_diego",
+    "opponents": [
+      "DVF_v2",
+      "DVF",
+      "DVF_v2",
+      "NormalTeam",
+      "DVF_v2",
+      "DVF",
+      "DVF_v2",
+      "NormalTeam"
+    ],
+    "workers": 6,
+    "worker_rollout": 256,
+    "mode": "alternate",
+    "phase_steps": 1500000,
+    "first": "striker",
+    "cycles": 0,
+    "hours": 0.0,
+    "until": "2026-11-23T08:00",
+    "init_from": "models\\inicio_corrida7",
+    "save_every": 20,
+    "striker_opponents": null,
+    "keeper_opponents": null,
+    "striker_entropy": 0.012,
+    "keeper_entropy": 0.01,
+    "lr": 0.0001,
+    "jitter_px": 5.0,
+    "still_speed": 15.0,
+    "hparams": {
+      "lr": 0.0001,
+      "gamma": 0.99,
+      "lam": 0.95,
+      "clip_ratio": 0.2,
+      "epochs": 4,
+      "batch_size": 64,
+      "action_repeat": 4,
+      "entropy_coef": 0.05,
+      "value_coef": 0.5,
+      "max_grad_norm": 0.5
+    },
+    "reward": "dvf_rewards.compute_reward v4",
+    "cpu_count": 20
+  },
+  "total_hours": 10.746,
+  "plateaus": [
+    {
+      "time": "2026-11-23T00:55:41",
+      "role": "keeper",
+      "cycle": 3,
+      "detail": "keeper: en 3 fases la entrop\u00eda baj\u00f3 -0.172 y la m\u00e9trica mejor\u00f3 -0.07 goles/actualizaci\u00f3n (umbral 0.3)"
+    },
+    {
+      "time": "2026-11-23T02:03:24",
+      "role": "keeper",
+      "cycle": 4,
+      "detail": "keeper: en 3 fases la entrop\u00eda baj\u00f3 -0.101 y la m\u00e9trica mejor\u00f3 +0.03 goles/actualizaci\u00f3n (umbral 0.3)"
+    },
+    {
+      "time": "2026-11-23T02:37:22",
+      "role": "striker",
+      "cycle": 5,
+      "detail": "striker: en 3 fases la entrop\u00eda baj\u00f3 +0.009 y la m\u00e9trica mejor\u00f3 +0.08 goles/actualizaci\u00f3n (umbral 0.1)"
+    },
+    {
+      "time": "2026-11-23T03:11:33",
+      "role": "keeper",
+      "cycle": 5,
+      "detail": "keeper: en 3 fases la entrop\u00eda baj\u00f3 -0.140 y la m\u00e9trica mejor\u00f3 -0.07 goles/actualizaci\u00f3n (umbral 0.3)"
+    },
+    {
+      "time": "2026-11-23T04:19:05",
+      "role": "keeper",
+      "cycle": 6,
+      "detail": "keeper: en 3 fases la entrop\u00eda baj\u00f3 -0.053 y la m\u00e9trica mejor\u00f3 +0.07 goles/actualizaci\u00f3n (umbral 0.3)"
+    },
+    {
+      "time": "2026-11-23T06:34:34",
+      "role": "keeper",
+      "cycle": 8,
+      "detail": "keeper: en 3 fases la entrop\u00eda baj\u00f3 -0.056 y la m\u00e9trica mejor\u00f3 +0.02 goles/actualizaci\u00f3n (umbral 0.3)"
+    },
+    {
+      "time": "2026-11-23T07:08:20",
+      "role": "striker",
+      "cycle": 9,
+      "detail": "striker: en 3 fases la entrop\u00eda baj\u00f3 -0.010 y la m\u00e9trica mejor\u00f3 +0.02 goles/actualizaci\u00f3n (umbral 0.1)"
+    },
+    {
+      "time": "2026-11-23T08:15:47",
+      "role": "striker",
+      "cycle": 10,
+      "detail": "striker: en 3 fases la entrop\u00eda baj\u00f3 -0.044 y la m\u00e9trica mejor\u00f3 -0.30 goles/actualizaci\u00f3n (umbral 0.1)"
+    }
+  ]
+}

@@ -5,6 +5,94 @@ qué se cambió y por qué. Lo más reciente va arriba.
 
 ---
 
+## Sesión 2026-11-23 (68) — Diego: corrida7_diego terminada (10,7 h) — por primera vez parejos con v2.3
+
+- **corrida7_diego**: 19 fases (9 ciclos completos + el striker del ciclo 10), 10,75 h, desde
+  `models/inicio_corrida7` (final de corrida6). Único cambio: **entropía del striker 0,012** (keeper
+  0,01, lr 1e-4, recompensa v4, 6 workers). Lanzada con `lanzar_noche.ps1` 22/11 21:30; terminó 08:16.
+  La notebook no se suspendió (`evaluar_noche.py` funcionó). Arrancó en modo Silent de Armoury Crate
+  (~15 s/iteración); en modo Rendimiento ~8 s (~740 pasos/s).
+- La entropía del striker quedó en 1,8–2,0 toda la noche (corrida6 subía a 2,1).
+- **Evaluación automática** (`chequeos/noche_20261123_0824.md`, 12,5 min): los ciclos siguen
+  oscilando mucho contra v2.3 (de 1-1-30 en el ciclo 3 a 17-1-14 en el ciclo 2).
+  Confirmación contra v2.3, 48 semillas × 2 lados = 96 partidos:
+  - ciclo 2 (23:14): 46-3-47 (−0,1 ±0,5); **final: 44-3-49 (−0,1 ±0,6)**; ciclo 8: 34-2-60 (−1,0);
+  - ref (mejor de corrida6): 39-2-55 (−0,8 ±0,7). Mejora de +0,7 por par de partidos.
+  - El script eligió el ciclo 2 (2 victorias más, mismo neto) y lo copió a `noche_20261123_0824_mejor_*`.
+- **Elegido: el par final**, porque empata con el ciclo 2 contra v2.3 y es claramente mejor en lo demás:
+  NT y v1 **32-0-0** (ciclo 2: 26-0-6 contra cada uno) y su keeper vuelve rápido al arco.
+  Copia fija: `models/runs/corrida7_diego/chequeos/20261123_0920_{striker,keeper}.npz`.
+- **Chequeo completo del par final** (`chequeos/20261123_0920.md`):
+  - 1 min + gol de oro: NT **32-0-0** (+4,6) · v1 **32-0-0** (+3,1) · v2.3 **17-1-14** (0,0);
+  - final de 3 min: NT 16-0-0 · v1 16-0-0 · v2.3 **8-0-8** (−0,1) (corrida6: 6-1-9);
+  - de espaldas **7 %** (yendo a la pelota 2 %; corrida6 15 %);
+  - **keeper en el saque**: x mediana a 0,5/1/2 s = 382/305/**261** contra v2.3 (corrida6 398/344/305,
+    corrida5 373/309/281). `sonda_keeper`: x 251 a los 2 s (corrida6 304). Resuelto sin tocar la
+    recompensa: la v5 del keeper ya no hace falta por ahora.
+  - Punto débil: contra v1 nuestro striker toca primero solo 3 de 18 saques (contra v2.3, 9 de 12), y
+    2 goles en contra de saque por rival en 300 s.
+- **Nuevo mejor par**: `models/runs/corrida7_diego/chequeos/20261123_0920_{striker,keeper}.npz`.
+- `AGENTS.md` §5 actualizado con el estado de corrida6/corrida7 (estaba en corrida5, 25/10).
+
+## Sesión 2026-11-22 (67) — Diego: sondas del mejor par, plan de corrida7 y noche desatendida
+
+- **Partidos en ventana** (mejor par de corrida6 contra v2.3): 0-1 de azul (gol de oro a los 70 s) y
+  1-2 de violeta. Dos derrotas por un gol, coherente con ganar ~4 de cada 10.
+- **Chequeo completo** (`models/runs/_analisis/chequeos/20261122_1955.md`):
+  - final de 3 min contra v2.3: **6-1-9** (corrida5 14:01: 2-1-13); NT 16-0-0, v1 15-0-1;
+  - de espaldas 15 % (corrida5 16 %);
+  - saques contra v2.3: **nuestro striker toca primero 9 de 9** (corrida5: 0 de 5), pero 2 goles en
+    contra de saque en 300 s;
+  - **el keeper vuelve tarde**: x mediana a 0,5/1/2 s = 398/344/305 (corrida5 373/309/281).
+    `sonda_keeper` (180 s contra NT) lo confirma: mediana x 234 vs 190 y x 304 vs 277 a los 2 s.
+- Decisión para corrida7: **solo bajar la entropía del striker a 0,012** (subía toda la noche), sin
+  tocar la recompensa: una sola variable por corrida. El keeper que vuelve tarde es el primer
+  candidato para una recompensa v5 si la evaluación por ciclo lo vuelve a mostrar.
+- Punto de partida: `models/inicio_corrida7/` = final de corrida6 (con Adam; mismo hash que la copia
+  `20261121_0911`).
+- **Nuevo `scripts/evaluar_noche.py`**: mantiene la PC sin suspenderse (SetThreadExecutionState, sin
+  tocar la configuración) hasta que terminan el entrenamiento **y** la evaluación; al terminar mide
+  el par de cada fin de fase de keeper + el final + una referencia (16 semillas, 3 rivales), confirma
+  los 3 mejores y la referencia contra v2.3 con 48 semillas, guarda copia fija del mejor y corre las
+  sondas de saque y keeper → `chequeos/noche_<fecha>.md`. Probado sobre corrida6 (también lanzado
+  desacoplado por WMI); los archivos de prueba se borraron.
+- **Nuevo `scripts/lanzar_noche.ps1`**: `lanzar_corrida.ps1 -Desacoplado` + `evaluar_noche.py`
+  desacoplado, en un paso. `chequeo_completo._benchmark` acepta `rivales=` (opcional).
+
+## Sesión 2026-11-21 (66) — Diego: corrida6_diego terminada (11,9 h) y nuevo mejor par
+
+- **corrida6_diego**: 20 fases (10 ciclos), 11,95 h, desde corrida5 con Adam; recompensa v4, lr
+  1e-4, entropía 0,015 / 0,01, 6 workers. Sin caídas (supervisor en el intento 1). ~34 min por fase
+  (~730 pasos/s). Muchos avisos de ESTANCAMIENTO (la métrica del log oscila), esperables.
+- La notebook se **suspendió** a las 08:05 (terminó el script anti-suspensión) y pausó 28 min la
+  última fase: `--until` solo se mira entre fases, así que esa fase arrancó a las 07:55 y terminó a
+  las 09:11. Próxima vez: el anti-suspensión tiene que durar `-Hasta` + ~1 h.
+- **Benchmark** (1 min + gol de oro, 16 semillas × 2 lados, 10 workers) del par al final de cada
+  ciclo, más referencias. Informe: `models/runs/corrida6_diego/chequeos/20261121_0911.md`.
+  - **Ciclo 10 (final): NT 30-0-2 · v1 27-0-5 · v2.3 11-2-19** (corrida5 14:01: 30-0-2, 27-0-5,
+    7-3-22). Los ciclos intermedios oscilan mucho (contra v1, de 14-0-18 a 27-0-5).
+  - Confirmación contra v2.3 con 48 semillas (96 partidos): **ciclo 10 39-2-55 (−0,8 ±0,7)** vs
+    corrida5 14:01 29-3-64 (−1,2 ±0,5). Más goles de saque a favor (0,5 vs 0,1 por partido).
+- **Nuevo mejor par**: `models/runs/corrida6_diego/chequeos/20261121_0911_{striker,keeper}.npz`.
+- La entropía del striker subió toda la noche (1,55 → 2,12; en corrida5 ~1,3). A vigilar.
+
+## Sesión 2026-11-20 (65) — Diego: entorno armado en su PC (ROGDIEGO), listo para entrenar
+
+- Clonado `Tereso2345/DVF-Soccer-Team`. El material de la cátedra (`game/`, `setup_*_notebook.py`,
+  equipos de ejemplo, notebooks, `HowTo_*`, docs del curso, `README_curso.md`) se copió de la
+  carpeta local del Praktikum; queda fuera de git por `.gitignore`.
+- `scripts/instalar.ps1` con Python 3.10.11: **TensorFlow 2.21.0**, numpy 2.2.6, pymunk 6.11.0.
+  `verificar_entorno.py`: **20 OK, 1 aviso (ruta con espacios), 0 fallas**.
+- Control con TF 2.21 (mejor par de corrida5, 24/10 14:01; 1 min + gol de oro, 8 semillas = 16
+  partidos): NormalTeam **16-0-0** (+4,0), v1 **14-0-2** (+2,1). Coherente con la referencia.
+- PC: i7-13650HX (14 núcleos / 20 hilos), 15,6 GB de RAM, RTX 4060 Laptop. Es una notebook: ojo
+  con la temperatura.
+- `scripts/lanzar_corrida.ps1`: el chequeo de "corrida ya viva" filtraba por `*praktikum-soccer*`
+  (la carpeta de Valentino) y en otra carpeta no detectaba nada; ahora usa el nombre de la carpeta
+  del proyecto.
+- Punto de partida preparado: `models/inicio_diego/` = `striker.npz` y `keeper.npz` de corrida5
+  (con estado de Adam). Corrida a usar: `corrida6_diego`.
+
 ## Sesión 2026-10-25 (64) — Repositorios en GitHub: público (nuestro código) y privado (completo)
 
 - **Público: https://github.com/Tisi420/DVF-Soccer-Team** (rama `main`, commit `6316bdf`, 170

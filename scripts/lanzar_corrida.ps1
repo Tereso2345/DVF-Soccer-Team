@@ -35,8 +35,12 @@ Set-Location $root
 $salidas = "models\runs\_salidas"
 New-Item -ItemType Directory -Force $salidas | Out-Null
 
+# DVF (2026-11-20, sesión 65): antes filtraba por '*praktikum-soccer*' (la carpeta de Valentino);
+# en otra PC con otro nombre de carpeta nunca detectaba una corrida viva. Ahora usa el nombre de la
+# carpeta del proyecto, que aparece en la línea de comando de train_dl (el supervisor la pasa entera).
+$carpeta = Split-Path -Leaf $root
 $vivos = Get-CimInstance Win32_Process -Filter "Name='python.exe'" |
-	Where-Object { $_.CommandLine -like '*praktikum-soccer*' -and $_.CommandLine -like '*train_dl*' -and $_.CommandLine -like "*--run $Run *" }
+	Where-Object { $_.CommandLine -like "*$carpeta*" -and $_.CommandLine -like '*train_dl*' -and $_.CommandLine -like "*--run $Run *" }
 if ($vivos) { throw "La corrida $Run ya está corriendo (PID $($vivos.ProcessId -join ', ')). No lanzo otra." }
 
 # Reloj: compara con time.windows.com (si no hay internet, sigue con un aviso).

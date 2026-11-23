@@ -39,10 +39,12 @@ FILA = re.compile(r"(soccer_team_\w+)\s+(\d+)\+(\d+)\s+\|\s+([\d.]+)\s+-\s+([\d.
                   r"\s+([+-][\d.]+)\s+±\s+([\d.]+)\s+\|\s+(\d+-\d+-\d+)\s+\|\s+([\d.]+)\s+-\s+([\d.]+)")
 
 
-def _benchmark(striker, keeper, seeds, duracion, workers):
+# DVF (2026-11-22, sesión 67): parámetro opcional `rivales` para que evaluar_noche.py confirme solo
+# contra v2.3 con muchas semillas; sin él, igual que antes (los 3 rivales).
+def _benchmark(striker, keeper, seeds, duracion, workers, rivales=None):
 	env = dict(os.environ, DVF_DL_STRIKER=str(striker), DVF_DL_KEEPER=str(keeper), PYTHONIOENCODING="utf-8")
 	env.pop("DVF_DL_RUN", None)
-	cmd = [sys.executable, str(ROOT / "scripts" / "benchmark.py"), "soccer_team_DVF_DL", "--vs", *RIVALES,
+	cmd = [sys.executable, str(ROOT / "scripts" / "benchmark.py"), "soccer_team_DVF_DL", "--vs", *(rivales or RIVALES),
 	       "--seeds", str(seeds), "--jitter", "3", "--workers", str(workers), "--duration", str(duracion),
 	       "--gol-de-oro"]
 	out = subprocess.run(cmd, cwd=ROOT, env=env, capture_output=True, text=True, encoding="utf-8",

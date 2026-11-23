@@ -2,7 +2,7 @@
 
 > Leé este archivo **entero** antes de tocar nada. Después leé `docs/CONTEXTO_DL.md` si vas a
 > entrenar o evaluar la red, y las 3–4 sesiones más nuevas de `CHANGELOG.md` (están arriba).
-> Actualizado: 2026-10-25 (sesión 63). Empezá por `EMPEZAR_ACA.md` si sos una persona.
+> Actualizado: 2026-11-23 (sesión 68). Empezá por `EMPEZAR_ACA.md` si sos una persona.
 
 ## 1. Qué es este proyecto
 
@@ -72,35 +72,38 @@ español.
 | `run.py` | Partido **en ventana**: `python run.py <izq> <der> --duracion 60 --gol-de-oro`. |
 | `models/runs/<run>/` | Una corrida: `striker.npz`, `keeper.npz`, `run.json` (fases, horas, config), `training.log`, `checkpoints/`, `chequeos/`. |
 
-## 5. Estado del Deep Learning (lo más importante) — al 25/10/2026 13:16
+## 5. Estado del Deep Learning (lo más importante) — al 23/11/2026 (sesión 68)
 
-- **Última corrida: `corrida5`** (detenida y guardada: 2,46 h, 14 fases). Arranca de la
-  **imitación del equipo v2.3** (`models/imitacion/equipo_v23`). Configuración:
-  - recompensa v4;
-  - lr 1e-4;
-  - entropía del striker 0,015 y del keeper **0,01** desde las 13:14 del 25/10 (antes 0,015: su
-    entropía subía y volvía peor al arco en el saque);
-  - rivales v2.3 ×3, v1 ×2, NormalTeam ×1 (con 6 workers);
-  - un saque nuevo cada 60 s sin gol.
-  Para seguirla: `models/runs/corrida5/striker.npz` y `keeper.npz`, que traen el estado de Adam.
-- **Mejor par medido**: `models/runs/corrida5/chequeos/20261024_1401_{striker,keeper}.npz`
-  (1,43 h). En 1 min con gol de oro, G-E-P en 32 partidos:
+<!-- DVF (2026-11-23, sesión 68): estado actualizado con corrida6_diego y corrida7_diego (PC de Diego). -->
+- **Cadena de corridas**: imitación v2.3 → `corrida5` (Valentino, 2,46 h) → `corrida6_diego`
+  (11,95 h) → **`corrida7_diego`** (10,75 h, la última). Todas con Adam guardado en el `.npz`.
+- **Configuración de corrida7**: recompensa v4, lr 1e-4, entropía striker **0,012** (corrida6:
+  0,015; su entropía subía toda la noche) y keeper 0,01, rivales v2.3 ×3, v1 ×2, NormalTeam ×1
+  con 6 workers, un saque nuevo cada 60 s sin gol. Para seguirla: `-InitFrom` a una carpeta con
+  `models/runs/corrida7_diego/striker.npz` y `keeper.npz`.
+- **Noche desatendida**: `scripts/lanzar_noche.ps1` lanza la corrida y `evaluar_noche.py`, que
+  mantiene la PC despierta y deja el informe `chequeos/noche_<fecha>.md` a la mañana.
+- **Mejor par medido**: `models/runs/corrida7_diego/chequeos/20261123_0920_{striker,keeper}.npz`
+  (final de corrida7). En 1 min con gol de oro, G-E-P en 32 partidos:
 
 | par | NormalTeam | v1 | v2.3 |
 |---|---|---|---|
-| **corrida5 24/10 14:01 (mejor)** | 30-0-2 | 27-0-5 | 7-3-22 |
-| corrida5 25/10 13:02 (`monitoreo/1302_*`) | 29-0-3 | 21-2-9 | 6-0-26 |
+| **corrida7 final (mejor)** | **32-0-0** | **32-0-0** | **17-1-14** |
+| corrida6 final (`corrida6_diego/chequeos/20261121_0911_*`) | 30-0-2 | 27-0-5 | 11-2-19 |
+| corrida5 24/10 14:01 | 30-0-2 | 27-0-5 | 7-3-22 |
 | rule-based v2.3 (referencia) | 30-0-2 | 27-0-5 | 13-6-13 |
 
-  Contra NormalTeam y v1 ya está al nivel del rule-based v2.3.
+  Confirmación contra v2.3 en 96 partidos: corrida7 final 44-3-49 (−0,1 ±0,6), corrida6 39-2-55
+  (−0,8). Final de 3 min contra v2.3: 8-0-8. **Ya está parejo con v2.3** y gana todo contra NT y v1.
+  De espaldas 7 %. El keeper vuelve al arco en el saque más rápido que nunca (x 261 a los 2 s).
 - **`entrega/red_DL/`** tiene el modelo VIEJO (corrida3). Corre de espaldas el 92 % del tiempo y es
   peor en todo. **No se usa de base.** Se reemplaza cuando se elija el modelo final.
 - **Pendientes**:
-  - mejorar contra v2.3;
-  - que el keeper vuelva más rápido al arco en el saque;
-  - mantener la carrera del saque del striker (el 25/10 ganaba 6 de 10 primeros toques contra
-    v2.3);
-  - vigilar el % de carrera de espaldas (8–16 %; casi 0 % yendo hacia la pelota).
+  - ganarle a v2.3 (hoy empate);
+  - saques contra v1: nuestro striker toca primero solo 3 de 18; ~2 goles en contra de saque por
+    rival cada 300 s;
+  - los ciclos oscilan mucho (contra v2.3, de 1-1-30 a 17-1-14): seguir eligiendo por benchmark;
+  - reemplazar `entrega/red_DL/` cuando se elija el modelo final.
 
 ## 6. Lecciones aprendidas (no repetir errores)
 

@@ -1,0 +1,3 @@
+2026-11-22T21:30:19 === supervisor: run=corrida7_diego hasta 2026-11-23T08:00 | args: --run corrida7_diego --until 2026-11-23T08:00 --init-from models\inicio_corrida7 --phase-steps 1500000 --opponents DVF_v2 DVF DVF_v2 NormalTeam DVF_v2 DVF DVF_v2 NormalTeam --workers 6 --striker-entropy 0.012 --keeper-entropy 0.01 --lr 1e-4 ===
+2026-11-22T21:30:19 intento 1: lanzando train_dl.py
+2026-11-23T08:15:49 train_dl.py terminó bien (código 0): fin
